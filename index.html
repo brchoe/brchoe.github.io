@@ -1,8 +1,62 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>DadWagon Concepts</title>
+    <style>
+        /* Add some basic CSS styles for the tabs and content */
+        .tabs {
+            display: flex;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>Dad Wagon = Best Wagon</p>
+    <h1>Welcome to DadWagon Concepts</h1>
+
+    <!-- Tabbed navigation for Home and About sections -->
+    <div class="tabs">
+        <div class="tab" onclick="showTab('home')">Home</div>
+        <div class="tab" onclick="showTab('about')">About</div>
+    </div>
+
+    <!-- Content sections for Home and About -->
+    <div class="content" id="home">
+        <h2>Home</h2>
+        <p>Welcome to DadWagon Concepts, your source for innovative wagon designs.</p>
+    </div>
+
+    <div class="content" id="about">
+        <h2>About</h2>
+        <p>Learn more about our company and our mission to revolutionize family transportation.</p>
+    </div>
+
+    <script>
+        // JavaScript to toggle between tabs and show/hide content
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.style.display = 'none');
+
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        // Initialize the Home tab as active
+        showTab('home');
+    </script>
 </body>
 </html>
